@@ -99,3 +99,10 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# local files
+Tools collection.e4p
+.eric6project/
+.hg/
+.hgignore
+.hgrc
