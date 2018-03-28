@@ -10,7 +10,33 @@ Then I used Sed to remove HTML tags:
 
 <code>cat news.md | sed '/</ {:k s/<[^>]*>//g; /</ {N; bk}}' | sed '/^$/N;/^\n$/D' > news_txt.md</code> 
 
-The resulting file can be converted with the Python scripts and copied to a Hugo content folder.
+The resulting file can be converted with the Python scripts and copied to a Hugo content folder:
+
+<code>import_md_hugo_comix.py</code> 
+
+<code>import_md_hugo.py</code> 
+
+<code>import_md_hugo_articles.py</code> 
+
+Another tool is used to convert existing MD files created by Pandoc from DOCX files to Hugo compartible MD files with a Front Matter. Basically the tool transforms this header:
+
+﻿<code>## Глава 1. Крайне маловероятный день
+
+...</code>
+
+to that header:
+
+﻿<code>﻿---
+title: "Глава 1. Крайне маловероятный день"
+description: "Глава 1. Крайне маловероятный день"
+categories: "глава"
+layout: "chapters"
+weight: "1"
+date: "2013-11-27"
+lastmod: "2018-03-14"
+---
+
+...</code>
 
 
 ## Examples ##

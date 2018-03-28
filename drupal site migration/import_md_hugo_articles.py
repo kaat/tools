@@ -14,7 +14,9 @@ The same, as for news, but for article node types.
 
 # import sys,os
 def split_files(infilepath):
-    """Fuction to find lines to split at and to do the splitting.
+    """Function to find lines to split at and to do the splitting.
+    
+    Syntax: split_files(file_path_to_look_for_files)
     """
     title = None
     outfile = None
@@ -47,11 +49,13 @@ def split_files(infilepath):
                 line = 'description: "' + line.replace('"', '').strip() + '"'
                 counter = 0
                 
-            # correcting URLs for domain and images: /sites/default/files/styles/large/public/field/image/
+            # correcting URLs for domain and images: 
+            # /sites/default/files/styles/large/public/field/image/
             line = line.replace('http://umneem.org/', '/')
             line = line.replace('{.flowr}', '')
             line = line.replace('{.flowl}', '')
-            line = line.replace('/sites/default/files/styles/large/public/field/image/', '/static/img/')
+            line = line.replace('/sites/default/files/styles/large/public/field/image/', \
+                '/static/img/')
                 
             # adding quotes
             for variable in variables:

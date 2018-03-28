@@ -15,7 +15,9 @@ The converter is for news node types.
 
 
 def split_files(infilepath):
-    """Fuction to find lines to split at and to do the splitting.
+    """Function to find lines to split at and to do the splitting.
+    
+    Syntax: split_files(file_path_to_look_for_files)
     """
     title = None
     outfile = None
