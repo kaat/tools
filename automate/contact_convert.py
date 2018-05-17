@@ -23,7 +23,7 @@ def convert_files(filepath, filepathout):
     outfile = None
     fileslist = []
     # Magic strings to insert phone between them
-    insertpart1 = '<c:PhoneNumberCollection c:Version="1"' + \
+    insertpart1 = '<c:PhoneNumberCollection c:Version="1" ' + \
         'c:ModificationDate="2018-05-17T07:51:56Z">' + \
         '<c:PhoneNumber c:ElementID="6dff7e9d-94f7-4cca-97e7-6d5eb5458e6e" ' + \
         'c:Version="1" c:ModificationDate="2018-05-17T07:51:56Z">' + \
@@ -40,8 +40,8 @@ def convert_files(filepath, filepathout):
             fileslist.append(file)
     for filename in fileslist:
               
-        with open( os.path.join(filepath, filename), encoding='utf_8_sig') as infile, \
-            open( os.path.join(filepathout, filename ), 'w', encoding='utf_8_sig') as outfile:
+        with open( os.path.join(filepath, filename), encoding='utf_8') as infile, \
+            open( os.path.join(filepathout, filename ), 'w', encoding='utf_8') as outfile:
             print("Converting file " + filename)
             
             for line in infile:
@@ -52,7 +52,7 @@ def convert_files(filepath, filepathout):
                     phone = line[phonebegins:phoneends].strip()
                     print('Phone number: ',  phone)
                     
-                # Findin a line to insert a number.
+                # Finding a line to insert a number.
                 if line.find('<c:ContactIDCollection>') > 0:
                     insertposition = len(line) - len('</c:contact>') - 1
                     line = line[0:insertposition] + insertpart1 + phone + insertpart2
