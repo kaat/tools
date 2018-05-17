@@ -12,7 +12,7 @@ to Hugo site generator Markdown files.
 The same, as for news, but for article node types.
 """
 
-# import sys,os
+
 def split_files(infilepath):
     """Function to find lines to split at and to do the splitting.
     
@@ -83,12 +83,12 @@ def split_files(infilepath):
 def main():
     """The main list of commands.
     """
+    print("Running conversion...")
     # splitting the file
     split_files("import_art.md")
     return 0
     
 
 if __name__ == "__main__":
-    print("running conversion...")
     main()
 

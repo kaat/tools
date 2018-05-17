@@ -70,12 +70,12 @@ def split_files(infilepath):
 def main():
     """The main list of commands.
     """
+    print("Running conversion...")
     # splitting the file
     split_files("import.md")
     return 0
     
 
 if __name__ == "__main__":
-    print("running conversion...")
     main()
 

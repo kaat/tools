@@ -84,11 +84,11 @@ def main():
     # converting the files
     # assuming that the script exists in the folder
     # with input and output folders
+    print("Running conversion...")
     convert_files("parts", "1")
     return 0
     
 
 if __name__ == "__main__":
-    print("running conversion...")
     main()
 

@@ -6,7 +6,7 @@ To create MD files from HTML I used Pandoc. The HTML file was saved from the lin
 
     <!-- !Feed Icons -->
     <!-- !Main Content -->
-
+^
     pandoc --wrap=none news.html -o news.md
 
 Then I used Sed to remove HTML tags:
