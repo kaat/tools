@@ -16,7 +16,7 @@ The script works on a folder with Contact files.
 import os
 
 def convert_files(filepath, filepathout):
-    """Function to conver MD files to Hugo suitable format with a Front Matter.
+    """Function to conver Windows .contact files.
     
     Syntax: convert_files(input_folder, output_folder)
     """
